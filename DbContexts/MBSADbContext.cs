@@ -26,7 +26,8 @@ namespace MBSA_Dev_Test.DbContexts
             {
 #pragma warning disable CS1030 // #warning directive
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("database:connection");
+                optionsBuilder.UseSqlServer(@"Data Source=ZAL-MP3G6CA\\MSSSSQLSERVER;initial catalog=MBSATest; Trusted_Connection = True;");
+
 #pragma warning restore CS1030 // #warning directive
             }
         }

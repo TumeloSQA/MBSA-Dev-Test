@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using MBSA_Dev_Test.DAL;
 
 namespace MBSA_Dev_Test
 {
@@ -32,8 +33,11 @@ namespace MBSA_Dev_Test
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            //services.AddMvc();
-            //services.AddDbContext<MBSADbContext>(options => options.Use("Data Source=AmaSocietyDB.db"));
+            services.AddMvc();
+            services.AddEntityFrameworkSqlServer();
+            services.AddDbContext<MBSADbContext>(options => options.UseSqlServer("Data Source=AmaSocietyDB.db"));
+
+            services.AddScoped<IProjectsRepository, ProjectsRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
