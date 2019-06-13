@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MBSA_Dev_Test.Models;
 using Microsoft.AspNetCore.Mvc;
-using MBSA_Dev_Test.Models;
+using System.Diagnostics;
 
 namespace MBSA_Dev_Test.Controllers
 {
@@ -34,6 +30,10 @@ namespace MBSA_Dev_Test.Controllers
             return View();
         }
 
+        public JsonResult GetEmp()
+        {
+            return null;
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
