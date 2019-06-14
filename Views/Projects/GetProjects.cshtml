@@ -13,7 +13,28 @@
             <h4 class="card-title">
                 <a href="#">Project Name</a>
             </h4>
-            <p class="card-text">Project Description</p>
+            <p id="description" class="card-text">Project Description</p>
+            <div id="descr"></div>
         </div>
     </div>
 </div>
+<script src="~/vendor/LoadProjects.js"></script>
+@*<script src="~/Scripts/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        //Call EmpDetails jsonResult Method
+        $.getJSON("Projects/GetProjects",
+            function (json) {
+                var tr;
+                for (var i = 0; i < json.length; i++) {
+                    tr = $('<tr/>');
+                    tr.append("<td>" + json[i].Id + "</td>");
+                    tr.append("<td>" + json[i].Name + "</td>");
+                    tr.append("<td>" + json[i].City + "</td>");
+                    tr.append("<td>" + json[i].Address + "</td>");
+                    $('portfolio-item').append(tr);
+                }
+            });
+    });
+</script>*@
+
