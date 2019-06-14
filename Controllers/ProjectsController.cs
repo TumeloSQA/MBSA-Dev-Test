@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using MBSA_Dev_Test.Models;
 using MBSA_Dev_Test.DbContexts;
 using MBSA_Dev_Test.DAL;
+using Newtonsoft.Json;
+using System.Web.Http.Results;
 
 namespace MBSA_Dev_Test.Controllers
 {
@@ -20,14 +22,11 @@ namespace MBSA_Dev_Test.Controllers
             _context = dbContext;
         }
 
-        //public async Task<JsonResult> GetProjects()
-        //{
-        //    return Json(await _projectsRepository.GetProjects().ToListAsync());
-        //}
-
-        public IEnumerable<Project> GetProject()
+        public JsonResult GetProjects()
         {
-            return  _projectsRepository.GetProjects().ToList();
+            var result = _projectsRepository.GetProjects().ToList().ToAsyncEnumerable();
+
+            return Json(result);
         }
 
     }

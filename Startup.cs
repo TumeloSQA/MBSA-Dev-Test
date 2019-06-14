@@ -35,7 +35,7 @@ namespace MBSA_Dev_Test
             });
             services.AddMvc();
             services.AddEntityFrameworkSqlServer();
-            services.AddDbContext<MBSADbContext>(options => options.UseSqlServer("Data Source=AmaSocietyDB.db"));
+            services.AddDbContext<MBSADbContext>(options => options.UseSqlServer(@"Data Source=ZAL-MP3G6CA\MSSSSQLSERVER;Initial Catalog=MBSATest;Integrated Security=True;"));
 
             services.AddScoped<IProjectsRepository, ProjectsRepository>();
 
